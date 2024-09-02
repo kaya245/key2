@@ -1,0 +1,37 @@
+SERVER COMMANDS:
+hostnamectl set-hostname server
+bash
+yum install git -y
+git init --bare
+vim /etc/ssh/sshd_config
+vim /etc/ssh/sshd_config
+systemctl restart sshd
+systemctl enable sshd
+mkdir project
+cd project
+git init --bare
+ip a s
+[root@server project]# passwd root
+==============================================
+DEV-ONE:
+[ec2-user@ip-172-31-8-127 ~]$ hostnamectl set-hostname dev-one.example.com
+[ec2-user@ip-172-31-8-127 ~]$ sudo su -
+[root@ip-172-31-8-127 ~]# hostnamectl set-hostname dev-one.example.com
+[root@ip-172-31-8-127 ~]# bash
+[root@dev-one ~]# yum install git -y
+[root@dev-one ~]# git init
+[root@dev-one ~]# ssh-keygen
+[root@dev-one ~]# ls -a
+[root@dev-one ~]# cd .ssh/
+[root@dev-one .ssh]# ssh-copy-id root@172.31.7.164
+[root@dev-one .ssh]# cd
+[root@dev-one ~]# mkdir project
+[root@dev-one ~]# cd project
+[root@dev-one project]# vim index.html
+[root@dev-one project]# git add index.html
+[root@dev-one project]# git commit -m "dev-one" index.html
+[root@dev-one project]# git remote add origin root@172.31.7.164:project/
+[root@dev-one project]# git push origin master
+=============================================================================
+DEV-TWO:
+git clone root@172.31.7.164:project/
